@@ -1,17 +1,20 @@
 #include <stdio.h>
 /**
- * main - Prints alphabet without q and e.
- *
+ * main - prints numbers base 16
  * Return: Always 0
  */
 int main(void)
 {
-	char i;
+        int num;
+        char la;
 
-	for (i = 'a'; <= 'z'; i++)
-		if (i != 'q' && i != 'e')
-			putchar(i);
-	putchar('\n');
-	return (0);
-}
+        for (num = 0; num < 10; num++)
+
+
+
+
+
+    
+
+
 
