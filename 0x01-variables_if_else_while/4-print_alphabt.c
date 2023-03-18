@@ -1,20 +1,24 @@
 #include <stdio.h>
+
 /**
- * main - prints numbers base 16
+ * main - A program that prints the alphabet in lowercase
+ * followed by a new line
  * Return: Always 0
  */
 int main(void)
 {
-        int num;
-        char la;
+	int n = 97;
 
-        for (num = 0; num < 10; num++)
-
-
-
-
-
-    
-
-
-
+	while (n <= 122)
+	{
+		if (n == 101 || n == 113)
+		{
+			n++;
+			continue;
+		}
+		putchar(n);
+		n++;
+	}
+	putchar('\n');
+	return (0);
+}
