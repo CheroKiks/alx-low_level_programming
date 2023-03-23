@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * print_sign - prints the sign of a number
  * @n: the int to check
@@ -11,23 +11,17 @@ int print_sign(int n)
 {
 	if (n > 0)
 	{
-		_putchar('+');
-		_putchar(',');
-		_putchar(' ');
+		printf("+, ");
 		return (1);
 	}
 	else if (n == 0)
 	{
-		_putchar('0');
-		_putchar(',');
-		_putchar(' ');
+		printf("0, ");
 		return (0);
 	}
 	else
 	{
-		_putchar('-');
-		_putchar(',');
-		_putchar(' ');
+		printf("-, ");
 		return (-1);
 	}
 }
