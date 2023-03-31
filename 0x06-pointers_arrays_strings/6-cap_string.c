@@ -6,32 +6,32 @@
  *
  * Return: pointer to s.
  */
+
 char *cap_string(char *s)
 {
-	int string_count = 0;
+	int count = 0;
+	char prev;
+	int i;
+	int is_word_start;
 
-	while (s[string_count])
+	while (s[count] != '\0')
 	{
-		while (!(s[string_count] >= 'a' && s[string_count] <= 'z'))
-
-			string_count++;
-		if (s[string_count - 1] == ' ' ||
-		s[string_count - 1] == '\t' ||
-		s[string_count - 1] == '\n' ||
-		s[string_count - 1] == ',' ||
-		s[string_count - 1] == ';' ||
-		s[string_count - 1] == ',' ||
-		s[string_count - 1] == ',' ||
-		s[string_count - 1] == '!' ||
-		s[string_count - 1] == '?' ||
-		s[string_count - 1] == '"' ||
-		s[string_count - 1] == '(' ||
-		s[string_count - 1] == ')' ||
-		s[string_count - 1] == '{' ||
-		s[string_count - 1] == '}' ||
-		string_count == 0)
-			s[string_count] -= 32;
-		string_count++;
+		count++;
+	}
+	for (i = 0; i < count; i++)
+	{
+		if (s[i] >= 97 && s[i] <= 122)
+		{
+			prev = s[i - 1];
+			is_word_start = (i == 0 || (prev >= 9 && prev <= 13) || prev == 32
+			|| prev == 33 || prev == 34 || prev == 40 || prev == 41 ||
+			prev == 46 || prev == 59 || prev == 63 || prev == 123
+			|| prev == 125) ? 1 : 0;
+			if (is_word_start == 1)
+			{
+				s[i] = (int)(s[i]) - 32;
+			}
+		}
 	}
 	return (s);
 }
