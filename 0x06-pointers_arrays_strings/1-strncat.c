@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strncat - function that concentrates two strings.
+ * _strncat - function that concatenates two strings.
  * @dest: destination of string pointer.
  * @src: source string pointer.
  * @n: number of bytes to be concatenated.
@@ -9,7 +9,7 @@
  * Return: pointer to destination string
  */
 
-char *_strncat(char *dest, char *src, int n);
+char *_strncat(char *dest, char *src, int n)
 {
 	int length_of_string = 0;
 
