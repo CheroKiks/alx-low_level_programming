@@ -14,5 +14,6 @@ unsigned int _get_str_len(char* c);
 int compare(const char *X, const char *Y);
 void print_chessboard(char (*a)[8]);
 void print_diagsums(int *a, int size);
+void set_string(char **s, char *to);
 
 #endif /* !_MAIN_ */
