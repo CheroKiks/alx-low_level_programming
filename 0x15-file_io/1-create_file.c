@@ -1,29 +1,34 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * read_textfile- fxn that reads text file print to STDOUT.
- * @filename: the text file that is being read
- * @letters: count of letters to be read
- * Return: w- actual count of bytes read and printed
- *        0 when fxn fails or filename is NULL.
+ * create_file - fxn that creates a file.
+ * @filename: The pointer to the create filename.
+ * @text_content: The pointer to the strng being written to the file.
+ *
+ * Return: If the fxn fails -1.
+ *         Otherwise - 1.
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
-	char *buf;
-	ssize_t fd;
-	ssize_t w;
-	ssize_t t;
+	int fd, w, len = 0;
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-		return (0);
-	buf = malloc(sizeof(char) * letters);
-	t = read(fd, buf, letters);
-	w = write(STDOUT_FILENO, buf, t);
+	if (filename == NULL)
+		return (-1);
 
-	free(buf);
+	if (text_content != NULL)
+	{
+		for (len = 0; text_content[len];)
+			len++;
+	}
+
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(fd, text_content, len);
+
+	if (fd == -1 || w == -1)
+		return (-1);
+
 	close(fd);
-	return (w);
+
+	return (1);
 }
 
