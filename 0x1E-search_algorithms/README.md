@@ -1,1 +1,1 @@
-seacrh algorithms
+Search Algorithms
